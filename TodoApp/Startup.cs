@@ -47,6 +47,10 @@ namespace TodoApp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCors(builder =>            
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
 
             app.UseRouting();
 

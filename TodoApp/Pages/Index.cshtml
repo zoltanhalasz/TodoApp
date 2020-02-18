@@ -110,7 +110,7 @@
 			-- Add event handlers to "edit", "delete", "title"
 			-- Render with strike through items completed
 			-- Remove extra data on re-render
-			-- CSRF Token
+	
 		*/
 
 		function getCookie(name) {
@@ -128,7 +128,7 @@
 		    }
 		    return cookieValue;
 		}
-		var csrftoken = getCookie('csrftoken');
+		//var csrftoken = getCookie('csrftoken');
 
 		var activeItem = null
 		var list_snapshot = []
@@ -235,8 +235,6 @@
                 postTodo(urlpost, JSON.stringify(myBody));
             }
 
-
-
 		})
 
         function postTodo(url, myBody) {
@@ -246,7 +244,7 @@
 				headers:{
 					'Content-type':'application/json',			
                 },
-                body: myBody
+                body: myBody,				
 			}
 			).then(function(response){
 				buildList()
@@ -261,7 +259,7 @@
 				headers:{
 					'Content-type':'application/json',			
 				},
-				body: myBody
+                body: myBody,				
 			}
 			).then(function(response){
 				buildList()
@@ -284,7 +282,7 @@
 				method:'DELETE',
 				headers:{
 					'Content-type':'application/json',					
-				}
+                },				
 			}).then((response) => {
 				buildList()
 			})
@@ -301,12 +299,11 @@
 				headers:{
 					'Content-type':'application/json',
                 },
-                body: myBody
+                body: myBody,				
 			}).then((response) => {
 				buildList()
 			})
 		}
-
     </script>
 
 </body>
